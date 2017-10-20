@@ -1,0 +1,39 @@
+﻿COAL-FO Meetings
+
+
+2017-10-12        1
+Attendees        1
+Apologies        1
+Agenda        1
+Previous Action Items        1
+Minutes        1
+Action Items        1
+
+
+
+
+2017-10-12
+Attendees 
+Kenny Thompson
+Lewis McGibbney 
+Bryce Egley
+Apologies
+Agenda
+IceBreaker
+Previous Action Items
+None, first meeting
+Minutes
+Start 9:20am-
+Introduce Project and discuss vision 9:20am-9:50am-
+Questions 9:50am-10:00am-
+Introduce ourselves 10:00am-10:05am-
+Discuss follow on actions 10:05am-10:15am-
+
+
+Team has agreed to meet every two weeks on Thursdays at 9:00AM PST for one hour. Next meeting is on Thursday 26th, October.
+Action Items
+1. Lewis to get everyone access to XSEDE via accounts
+2. Kenny and Bryce to send Lewis deliverables as specified by program manager
+3. Sign up to Google Group
+4. Lewis to grant permissions for capstone-coal Github Org
+5. Lewis to grant permissions for GDrive
