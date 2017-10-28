@@ -1,0 +1,114 @@
+% ===============================================
+% CS 461: Problem Statement         Fall 2017
+% hw_revised.tex
+% Template for revised homework submission
+% ===============================================
+%         READ THE FOLLOWING CAREFULLY!!!
+% ===============================================
+% When you produce a PDF version of this document
+% to turn in, change the filename to hwX-name.pdf
+% replacing X with the homework assignment number
+% and name with your last name.
+% ===============================================
+
+% -----------------------------------------------
+% The preamble that follows can be ignored. Go on
+% down to the section that says "START HERE"
+% -----------------------------------------------
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+\sloppy
+
+\noindent CS 461 Requirements\par
+
+
+\noindent Team Name: COAL-FO\par
+
+
+\noindent Bryce Egley, Kenny Thompson\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textbf{1. Introduction}}\par
+
+
+\noindent \textbf{1.1 Purpose}\par
+
+
+\noindent The purpose of this document is to present a detailed description of the COAL-FO project. It will explain the purpose and design of the project, how we intend to accomplish it, and how we will know when we have completed our work. \par
+
+
+\noindent \textbf{1.2 Scope}\par
+
+
+\noindent The project will be focused around publicly available COAL algorithms created by the previous capstone group, publicly available spectral analysis collected from the NASA AVIRIS project, and a grant on the XSEDE environment to use HPC. \par
+
+
+\noindent \textbf{1.3 Definitions, Acronyms, Abbreviations}\par
+
+
+\noindent COAL-FO: Coal and Open-pit surface mining impacts on American Lands Follow-On\par
+
+
+\noindent HPC: High-performance computing\par
+
+
+\noindent XSEDE: Extreme Science and Engineering Discovery Environment\par
+
+
+\noindent AVIRIS: Airborne Visible / Infrared Imaging Spectrometer\par
+
+
+\noindent \textbf{1.4 References}\par
+
+IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specifications. IEEE Computer Society, 1998.\par
+
+
+\noindent \textbf{1.5 Overview}\par
+
+
+\noindent This project will, to put it in rough terms, take existing algorithms, export them to the XSEDE environment, process as much publicly available spectro imagery as possible, and use that to create an archive. A ‘stretch goal’ will be to take that archive and make it publicly viewable and searchable. \par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textbf{2. Overall Description}}\par
+
+
+\noindent \textbf{2.1 Product Perspective}\par
+
+
+\noindent The product will be taken from github and the existing code, exported to the XSEDE environment, and used to perform analysis on existing spectro imagery. \par
+
+
+\noindent \textbf{2.2 Product functions}\par
+
+
+\noindent The product will be non functional upon completion, unless further data is generated that requires analysis. The goal will be to create an archive. A stretch goal would be to create a way to search that archive, in which case the functions for taht would be a serach function and a visual way to represent data. \par
+
+
+\noindent \textbf{2.3 User Characteristics}\par
+
+
+\noindent The user will be able to access this archived dataset and access processed data to see damage from coal mining. If the stretch goal is reached, then the user will be able to search a database to get the same information without having to download it first. \par
+
+
+\noindent \textbf{2.4 Constraints}\par
+
+
+\noindent The XSEDE grant only allowed to 2tbs of storage and a certain number of clock hours. To counteract that, we will need to develop a system for rotating in imagery that needs to be processed and out data thats already been processed. We will also need to make sure our algorithms are as efficient as they can possibly be to not waste resources.\par
+
+
+\noindent In addition, we are limited by the AVIRIS data that is available that, while large, barely covers a fraction of the surface of the United States. \par
+
+
+\noindent \textbf{2.5 Assumptions and Dependencies}\par
+
+
+\noindent The COAL algorthm, the XSEDE environment, and Apache.\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textbf{3. Specific Requirements}}\par
+
+
+\noindent A completed archive, and tools that are exportable to XSEDE.\par
+
+\end{document}
