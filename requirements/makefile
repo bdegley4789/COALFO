@@ -12,3 +12,4 @@ all:
 	rm Requirements.dvi
 	rm Requirements.log
 	rm Requirements.ps
+	rm Requirements.out

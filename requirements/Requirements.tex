@@ -16,7 +16,11 @@
 % down to the section that says "START HERE"
 % -----------------------------------------------
 \documentclass[a4paper,12pt]{article}
-
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
 \begin{document}
 \sloppy
 
@@ -37,27 +41,27 @@
 
 \noindent The purpose for this document is to layout the requirements for the COAL-FO capstone project and describe how these requirements will be accomplished. \newline
 
-\noindent The purpose of our COAL-FO project as discussed in our last meeting with our client is to to create a searchable port for the existing COAL project. This will be augmented to accommodate the desire to (i) port the coal-sds software to the XSEDE platform and undertake test and evaluation of the system performance, (ii) process all AVIRIS and AVIRIS-NG imagery generating and archiving all science data products, and (iii) making the products searchable through a portal. \newline
+\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project as discussed in our last meeting with our client is to to create a searchable port for the existing COAL project. This will be augmented to accommodate the desire to (i) port the coal-sds software to the \href{https://www.xsede.org/}{XSEDE} platform and undertake test and evaluation of the system performance, (ii) process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and AVIRIS-NG imagery generating and archiving all science data products, and (iii) making the products searchable through a portal. \newline
 
 \noindent \textbf{1.2 Scope}\newline
 
 
-\noindent The project will be focused around publicly available COAL algorithms created by the previous capstone group, publicly available spectral analysis collected from the NASA AVIRIS project, and a grant on the XSEDE environment to use HPC. Work for this project will be stored in the Capstone-Coal organization on github and version control as well as future releases for this project will managed within that organization.\newline
+\noindent The project will be focused around publicly available \href{https://capstone-coal.github.io/}{COAL} algorithms created by the previous capstone group, publicly available spectral analysis collected from the NASA AVIRIS project, and a grant on the XSEDE environment to use HPC. Work for this project will be stored in the Capstone-Coal organization on github and version control as well as future releases for this project will managed within that organization.\newline
 
 
 \noindent \textbf{1.3 Definitions, Acronyms, Abbreviations}\newline
 
 
-\noindent COAL-FO: Coal and Open-pit surface mining impacts on American Lands Follow-On\newline
+\noindent \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO}: Coal and Open-pit surface mining impacts on American Lands Follow-On\newline
 
 
 \noindent HPC: High-performance computing\newline
 
 
-\noindent XSEDE: Extreme Science and Engineering Discovery Environment\newline
+\noindent \href{https://www.xsede.org/}{XSEDE}: Extreme Science and Engineering Discovery Environment\newline
 
 
-\noindent AVIRIS: Airborne Visible / Infrared Imaging Spectrometer\newline
+\noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS}: Airborne Visible / Infrared Imaging Spectrometer\newline
 
 
 \noindent \textbf{1.4 References}\newline
@@ -111,5 +115,15 @@ IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Spec
 
 
 \noindent A completed archive, and tools that are exportable to XSEDE. The requirements of our project as discussed with our client is to to create a searchable port for the existing COAL project. Specifically, this will be augmented to accommodate the desire to (i) port the coal-sds software to the XSEDE platform and undertake test and evaluation of the system performance, (ii) process all AVIRIS and AVIRIS-NG imagery generating and archiving all science data products, and (iii) making the products searchable through a portal.\newline
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textbf{4. References}}\newline
+
+\noindent [1] COAL-FO \url{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320} \newline
+
+\noindent [2] XSEDE \url{https://www.xsede.org/} \newline
+
+\noindent [3] AVIRIS \url{https://aviris.jpl.nasa.gov/} \newline
+
+\noindent [4] COAL \url{https://capstone-coal.github.io/}
 
 \end{document}
