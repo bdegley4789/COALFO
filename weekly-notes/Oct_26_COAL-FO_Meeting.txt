@@ -1,0 +1,34 @@
+﻿COAL-FO Meetings
+
+
+2017-10-26        1
+Attendees        1
+Agenda        1
+Previous Action Items        1
+Minutes        1
+Action Items        2
+
+
+2017-10-26
+Attendees 
+Kenny Thompson
+Lewis McGibbney 
+Bryce Egley
+Agenda
+Address any concerns with project statement
+Discuss requirements doc
+Previous Action Items
+1. Lewis to get everyone access to XSEDE via accounts
+2. Kenny and Bryce to send Lewis deliverables as specified by program manager
+3. Sign up to Google Group
+4. Lewis to grant permissions for capstone-coal Github Org
+5. Lewis to grant permissions for GDrive
+Minutes
+Start 9:00am
+1. Team to transfer current coursework repository over to capstone-coal Github Org
+2. Lewis to archive 2016-2017 coursework in new Github repository in capstone-coal Org
+3. Documentation on the Spectral Angle Mapper (SAM) classification technique can be found at http://www.csr.utexas.edu/projects/rs/hrs/analysis.html
+4. Lewis mentioned that two sentences from the Problem Statement should be altered to better represent the sentiment of the project. These are “Our main priority according to our client is to create a searchable port for the project.” Essentially they should be augmented to accommodate the desire to (i) port the coal-sds software to the XSEDE platform and undertake test and evaluation of the system performance, (ii) process all AVIRIS and AVIRIS-NG imagery generating and archiving all science data products, and (iii) making the products searchable through a portal.
+Action Items
+1. Team to get Requirements document to Lewis next week. 
+2. Lewis to archive last year’s COAL coursework in a new Github repository within the capstone-coal Org
