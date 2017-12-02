@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{amssymb}
+\usepackage{etoolbox}
 
 \renewcommand{\linespread}{1.0}
 \usepackage[colorlinks = true,
@@ -40,47 +41,46 @@ results.\cite{1}
 
 \subsubsection{Overview}
 
-\noindent This section will cover the specification of the High Performance Computing Cluster we will be using to make the data easier to view and less costly to users. For the High Performance Computing Cluster we have chosen to use XSEDE the Extreme Science and Engineering Discovery Environment.
+\noindent This section will cover the specification of the High Performance Computing Cluster we will be using to make the data easier to view and less costly to users. Just one of the AVIRIS images can be as large as 18 gigabytes some even larger. Since it takes a lot of resources to store these images we wish to store the AVIRIS images on a High Performance Computing Cluster. For the High Performance Computing Cluster we have chosen to use XSEDE the Extreme Science and Engineering Discovery Environment.
 
 \subsubsection{Design Concerns}
 
-\noindent This data is focused primarily on flight lines and areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. Our goal is to set up an HPCC system which can process and store the AVIRIS images.
+\noindent This data is focused primarily on flight lines and areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. Our goal is to set up an HPCC system which can process and store the AVIRIS images. XSEDE will give us 2 terabytes of storage to do this.
 
 \subsubsection{Design Elements}
 \paragraph{Compatibility}
 
-\noindent We want to make sure the AVIRIS images will be stored and processed on XSEDE without any changes to the AVIRIS images or problems with other developers getting the AVIRIS image off XSEDE.
-
+\noindent We want to make sure the AVIRIS images will be stored and processed on XSEDE without any changes to the AVIRIS images or problems with other developers getting the AVIRIS image off XSEDE. To do this we test this using several different operating systems and means of getting data off XSEDE.
 
 \paragraph{Reliability}
 
-\noindent This is where we will test that XSEDE correctly processes and stores the AVIRIS images and has enough room for the AVIRIS imagery we store on XSEDE.
+\noindent This is where we will test that XSEDE correctly processes and stores the AVIRIS images and has enough room for the AVIRIS imagery we store on XSEDE. Right now we are given 2 terabytes on XSEDE. There is 300 terabytes in the entire AVIRIS archive. Our goal is to use 2 terabytes and then the other 300 terabytes may be done later if we can get our data working correctly with XSEDE.
 
 \subsection{License}
 \subsubsection{Overview}
-\noindent This section will cover the specification of the Licenses we will be using maintain ownership and credit for our code but also keep it open source and available for other research projects. We want a license that is free and easy to use.
+\noindent This section will cover the specifications of the Licenses we will be using maintain ownership and credit for our code but also keep it open source and available for other research projects. We want a license that is free and easy to use. We also wish to have a license that is well known amongst the open source community.
 \subsubsection{Design Concerns}
-We need a license for our code that won’t require too much change to the existing code and won’t be heavy in documentation. A lot of our current code uses the GNU GPLv2 and Apache License v2.0. So, we would like to use these licenses or licenses very similar to them.
+We need a license for our code that won’t require too much change to the existing code and won’t be heavy in documentation. A lot of our current code is protected under the GNU GPLv2 and Apache License v2.0. So, we want to use these licenses or licenses very similar to them.
 \subsubsection{Design Elements}
 \paragraph{Compatibility}
-For this we want to use a license that other developers will be familiar with and comfortable with since we want to keep all our code open source. GNU GPLv2 and Apache License v2.0 are both excellent choices for this since they are the 2nd and 3rd most common open source licenses.
+For this we want to use a license that other developers will be familiar with and comfortable with since we want to keep all our code open source. GNU GPLv2 and Apache License v2.0 are both excellent choices for this since they are the 2nd and 3rd most common open source licenses after the MIT license.
 \paragraph{Reliability}
-for this we will want to make sure all of our code follows the licensing guidelines and fair use regulations.
+For this we will want to make sure all of our code follows the licensing guidelines and fair use regulations. We shouldn't have to do too much reliability testing for licensing though.
 
 \subsection{Common Cataloging and archiving system}
 \subsubsection{Overview}
-\noindent We wish to have a way to store AVIRIS imagery so that we can loop images through XSEDE and store other data for this and have it managed all in one place. This will make it easier to design and organize our project. Apache OODT-powered Science Data System can fill these concerns.
+\noindent We wish to have a way to store AVIRIS imagery so that we can loop images through XSEDE and store other data for our COAL-FO project on. We also wish to have all the data for COAL-FO be managed in one place. This will make it easier to design and organize our project. Apache OODT-powered Science Data System can fill these concerns as well as COAL-SDS.
 \subsubsection{Design Concerns}
-We need a common cataloging and archiving system that is compatible with the previous code written for COAL and that will work with XSEDE and AVIRIS imagery.
+We need a common cataloging and archiving system that is compatible with the previous code written for COAL and that will work with XSEDE and AVIRIS imagery. Our main concern is that there could be problems archiving AVIRIS imagery and corrupting are losing data.
 \subsubsection{Design Elements}
 \paragraph{Compatibility}
-\noindent For this we want to make sure that uses Apache OODT-powered Science Data System will be compatible with AVIRIS imagery and work well together with XSEDE.
+\noindent For this we want to make sure that Apache OODT-powered Science Data System will be compatible with AVIRIS imagery and work well together with XSEDE.
 \paragraph{Reliability}
-\noindent For this we want a common cataloging and archiving system that we are all familiar with and will work for the data we are working with. Coal-SDS is existing code for our capstone project which uses Apache OODT-powered Science Data System so we will use this as our common cataloging and archiving system.
+\noindent For this we want a common cataloging and archiving system that we are all familiar with and will work for the data we are working with. Coal-SDS is existing code for our capstone project which uses Apache OODT-powered Science Data System so we will use this as our common cataloging and archiving system. For reliability we tests the COAL-SDS code and make sure it works with AVIRIS imagery and XSEDE.
 
 \subsection{Export/Import tool view}
 \subsubsection{Overview}
-This section will cover the specification of the export import tool we will be using to take data in from the AVRIS databases and out to the XSEDE data systems. It will also be the tool we use to take data out of the XSEDE data systems and onto our database we will be creating to store this data.
+This section will cover the specifications of the export/import tool we will be using to take data in from the AVRIS databases and out to the XSEDE data systems. It will also be the tool we use to take data out of the XSEDE data systems and onto our database we will be creating to store this data.
 \subsubsection{Design Concerns}
 Our primary goal is to ensure on the go data transfers so we can process as much data as possible as quickly as possible. As such, the concerns will be making sure that our tool, in this case the GLOBUS command line system, will be compatible with AVRIS, XSEDE, and the database we create to store and present this data.
 \subsubsection{Design Elements}
@@ -113,7 +113,7 @@ This is where we ensure the data we feed in and the data we pull out are both pr
 
 \section{Conclusion}
 
-\noindent In this document, we covered the design for six technologies we will be using to implement and design our COAL-FO capstone project. We discussed the design concerns and design elements such as reliability and compatibility. When we start implementation of the project we may change design choices. We will try to stick to the design choices we made here in this document as much as possible.
+\noindent In this document, we covered the design for six technologies we will be using to implement and design our COAL-FO capstone project. We discussed the design concerns and design elements such as reliability and compatibility. When we start implementation of the project we may change design choices. We will try to stick to the design choices we made here in this document as much as possible. There are many other design technologies and features we will need to think about and develop over the course of the COAL-FO project. However for now we have managed to come up with a design process for 6 technologies which will be key to completing the COAL-FO project. For other design features in the future we will refer back to this process to determine how we will complete them.
 
 \begin{thebibliography}{9}
 \bibitem{1} ”CS461 - CS Senior Capstone”, Eecs.oregonstate.edu, 2017. [Online]. Available: \url{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320} [Accessed: 22- Nov- 2017]
