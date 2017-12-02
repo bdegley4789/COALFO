@@ -1,0 +1,159 @@
+\documentclass[10pt,draftclsnofoot,onecolumn,journal,compsoc]{IEEEtran}
+% for IEEEtran usage, see http://www.texdoc.net/texmf-dist/doc/latex/IEEEtran/IEEEtran_HOWTO.pdf
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amssymb}
+
+\renewcommand{\linespread}{1.0}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\title{CS 461 The Preliminary Design Document}
+\author{Bryce Egley and Kenny Thompson \\ Group Number: 28 \\ Project Name: \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} \\ Our Roles: Developers}
+\date{}
+\begin{document}
+\maketitle
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+	\href{https://capstone-coal.github.io/}{COAL} and Open-pit surface mining impacts on American Lands Follow-On (COAL-FO) is the successor project to the 2016-
+2017 \href{https://capstone-coal.github.io/}{COAL} project. \href{https://capstone-coal.github.io/}{COAL} initially aimed to deliver a suite of algorithms to identify, classify, characterize, and quantify (by reporting a
+number of key metrics) the direct and indirect impacts of mining operations and related destructive surface mining activities across the
+continental U.S (and further afield). \href{https://capstone-coal.github.io/}{COAL} successfully delivered a Python library for processing hyperspectral imagery from remote
+sensing devices such as the Airborne Visible/InfraRed Imaging Spectrometer \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and a Science Data System for running \href{https://capstone-coal.github.io/}{COAL}
+pipelines. \href{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320}{COAL-FO} will utilize recent funding obtained from a recently awarded NSF-funded \href{https://www.xsede.org/}{XSEDE} high performance computing
+(HPC) grant to further improve, validate and document \href{https://capstone-coal.github.io/}{COAL} algorithms, execution runtime performance and geospatial output
+results.\cite{1}
+
+\section{Body}
+
+\subsection{HPCC High Performance Computing Cluster}
+
+\subsubsection{Overview}
+
+\noindent This section will cover the specification of the High Performance Computing Cluster we will be using to make the data easier to view and less costly to users. For the High Performance Computing Cluster we have chosen to use XSEDE the Extreme Science and Engineering Discovery Environment.
+
+\subsubsection{Design Concerns}
+
+\noindent This data is focused primarily on flight lines and areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. Our goal is to set up an HPCC system which can process and store the AVIRIS images.
+
+\subsubsection{Design Elements}
+\paragraph{Compatibility}
+
+\noindent We want to make sure the AVIRIS images will be stored and processed on XSEDE without any changes to the AVIRIS images or problems with other developers getting the AVIRIS image off XSEDE.
+
+
+\paragraph{Reliability}
+
+\noindent This is where we will test that XSEDE correctly processes and stores the AVIRIS images and has enough room for the AVIRIS imagery we store on XSEDE.
+
+\subsection{License}
+\subsubsection{Overview}
+\noindent This section will cover the specification of the Licenses we will be using maintain ownership and credit for our code but also keep it open source and available for other research projects. We want a license that is free and easy to use.
+\subsubsection{Design Concerns}
+We need a license for our code that won’t require too much change to the existing code and won’t be heavy in documentation. A lot of our current code uses the GNU GPLv2 and Apache License v2.0. So, we would like to use these licenses or licenses very similar to them.
+\subsubsection{Design Elements}
+\paragraph{Compatibility}
+For this we want to use a license that other developers will be familiar with and comfortable with since we want to keep all our code open source. GNU GPLv2 and Apache License v2.0 are both excellent choices for this since they are the 2nd and 3rd most common open source licenses.
+\paragraph{Reliability}
+for this we will want to make sure all of our code follows the licensing guidelines and fair use regulations.
+
+\subsection{Common Cataloging and archiving system}
+\subsubsection{Overview}
+\noindent We wish to have a way to store AVIRIS imagery so that we can loop images through XSEDE and store other data for this and have it managed all in one place. This will make it easier to design and organize our project. Apache OODT-powered Science Data System can fill these concerns.
+\subsubsection{Design Concerns}
+We need a common cataloging and archiving system that is compatible with the previous code written for COAL and that will work with XSEDE and AVIRIS imagery.
+\subsubsection{Design Elements}
+\paragraph{Compatibility}
+\noindent For this we want to make sure that uses Apache OODT-powered Science Data System will be compatible with AVIRIS imagery and work well together with XSEDE.
+\paragraph{Reliability}
+\noindent For this we want a common cataloging and archiving system that we are all familiar with and will work for the data we are working with. Coal-SDS is existing code for our capstone project which uses Apache OODT-powered Science Data System so we will use this as our common cataloging and archiving system.
+
+\subsection{Export/Import tool view}
+\subsubsection{Overview}
+This section will cover the specification of the export import tool we will be using to take data in from the AVRIS databases and out to the XSEDE data systems. It will also be the tool we use to take data out of the XSEDE data systems and onto our database we will be creating to store this data.
+\subsubsection{Design Concerns}
+Our primary goal is to ensure on the go data transfers so we can process as much data as possible as quickly as possible. As such, the concerns will be making sure that our tool, in this case the GLOBUS command line system, will be compatible with AVRIS, XSEDE, and the database we create to store and present this data.
+\subsubsection{Design Elements}
+\paragraph{Compatibility}
+This is where we will ensure that the tool works with every piece of the process, from reading it on the AVRIS systems to storing the end result on our database.
+\paragraph{Reliability}
+This is where we ensure that we limit the amount of costly time consuming errors that might potentially cause us to have to redo aspects.
+
+\subsection{Programming language View}
+\subsubsection{Overview}
+This section will cover the specifications of the programming language we will be using to conduct our spectro-image analysis of the chosen area. Python was chosen because of its design benefits and the ease of use for a project like this. It also required less work since all of the tools we would need are already coded in this language.
+\subsubsection{Design Concerns}
+Design concerns: It is important that the code be simple, streamlined, and bug free. Since we are going to be running this code for a long time, having to stop and start over due to a bug or a conflict between parts would be less than ideal. Whats more, its also important that the code we use be ‘portable’, as in, we can port it to work on the HPC through our XSEDE grant.
+\subsubsection{Design Elements}
+\paragraph{Portability}
+This is where we ensure the programming language will be portable to work on the HPC.
+\paragraph{Reliability}
+This is where we ensure that the programming language we choose is reliable and will not cause us to lose significant amounts of progress.
+
+\subsection{Imagery view}
+\subsubsection{Overview}
+This section will cover the specifications of the imagery data. We will be using AVRIS image data, since it is already found in an easy to process form and it’s the type of image data that our program was specifically designed to deal with. AVRIS has large public databases of image files that we will take, process, and produce data that is easy for researchers to process and draw conclusions from.
+\subsubsection{Design Concerns}
+It is important that this imagery be processed uniformly, since the end goal will be to present them in a database for researchers of the future.
+\subsubsection{Design Elements}
+\paragraph{Image analysis}
+This is where we ensure that the image we feed in and the image
+\paragraph{Consistency}
+This is where we ensure the data we feed in and the data we pull out are both presented in a consistent form that is of academic use to further researchers.
+
+\section{Conclusion}
+
+\noindent In this document, we covered the design for six technologies we will be using to implement and design our COAL-FO capstone project. We discussed the design concerns and design elements such as reliability and compatibility. When we start implementation of the project we may change design choices. We will try to stick to the design choices we made here in this document as much as possible.
+
+\begin{thebibliography}{9}
+\bibitem{1} ”CS461 - CS Senior Capstone”, Eecs.oregonstate.edu, 2017. [Online]. Available: \url{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320} [Accessed: 22- Nov- 2017]
+
+\bibitem{2} ”USGS.gov — Science for a changing world”, Usgs.gov, 2017. [Online]. Available: \url{https://www.usgs.gov/} [Accessed: 22- Nov- 2017]
+
+\bibitem{3} ]”AVIRIS - Airborne Visible / Infrared Imaging Spectrometer”, Aviris.jpl.nasa.gov, 2017. [Online]. Available:
+\url{https://aviris.jpl.nasa.gov/} [Accessed: 22- Nov- 2017].
+
+\bibitem{4} ”XSEDE User Portal — Globus User Guide”, Portal.xsede.org, 2017. [Online]. Available: \url{https://portal.xsede.org/software/globus} [Accessed: 22- Nov- 2017].
+
+\bibitem{5} ”C++”, En.wikipedia.org, 2017. [Online]. Available:
+\url{https://en.wikipedia.org/wiki/C} [Accessed: 22- Nov- 2017].
+
+\bibitem{6} "MySQL", En.wikipedia.org, 2017. [Online]. Available: \url{https://en.wikipedia.org/wiki/MySQL} [Accessed: 22- Nov- 2017].
+
+\bibitem{7} "XSEDE, Extreme Science and Engineering Discovery Environment", www.xsede.org, 2017. [Online]. Available: \url{https://www.xsede.org/} [Accessed: 22- Nov- 2017].
+
+\bibitem{8} "AVIRIS, Airborne Visible/Infrared Imaging Spectrometer", aviris.jpl.nasa.gov, 2017. [Online]. Available: \url{https://aviris.jpl.nasa.gov/} [Accessed: 22- Nov- 2017].
+
+\bibitem{9} "AVIRIS-NG, airborne Visible/Infrared Imaging Spectrometer Next Generation", aviris-ng.jpl.nasa.gov, 2017. [Online]. Available: \url{https://aviris-ng.jpl.nasa.gov/}[Accessed: 22- Nov- 2017].
+
+\bibitem{10} "COAL, Coal and Open-pit surface mining impacts on American Lands", capstone-coal.github.io, 2017. [Online]. Available: \url{https://capstone-coal.github.io/} [Accessed: 22- Nov- 2017].
+
+\bibitem{11} "HPC, High Performance Computing", en.wikipedia.org, 2017. [Online]. Available: \url{https://en.wikipedia.org/wiki/Supercomputer} [Accessed: 22- Nov- 2017].
+
+\bibitem{12} "Query Language", en.wikipedia.org, 2017. [Online]. Available: \url{https://en.wikipedia.org/wiki/Query_language} [Accessed: 22- Nov- 2017].
+
+\bibitem{13} "Enterprise Module Service", hpccsystems.com, 2017. [Online]. Available: \url{https://hpccsystems.com/enterprise-services/modules/esp} [Accessed: 22- Nov- 2017].
+
+\bibitem{14} "HPCC High Performance Computing Cluster", hpccsystems.com, 2017. [Online]. Available: \url{https://hpccsystems.com/enterprise-services/modules/esp} [Accessed: 22- Nov- 2017].
+
+\bibitem{15} "OSU Unix HPC Cluster", cosine.oregonstate.edu, 2017. [Online]. Available \url{http://cosine.oregonstate.edu/unix-hpc-cluster} [Accessed: 22- Nov- 2017].
+
+\bibitem{16} "MIT License", en.wikipedia.org, 2017. [Online]. Available: \url{https://en.wikipedia.org/wiki/MIT_License} [Accessed: 29- Nov- 2017].
+
+\bibitem{17} "Apache License Version 2.0", www.apache.org, 2017. [Online]. Available \url{https://www.apache.org/licenses/LICENSE-2.0} [Accessed: 29- Nov- 2017].
+
+\bibitem{18} "GNU General Public License, version 2", www.gnu.org, 2017. [Online]. Available \url{https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html} [Accessed: 29- Nov- 2017].
+
+\bibitem{19} "Top Open Source Licenses",www.blackducksoftware.com, 2017.[Online]. Available \url{https://www.blackducksoftware.com/top-open-source-licenses} [Accessed: 29- Nov- 2017].
+\end{thebibliography}
+\end{document}
