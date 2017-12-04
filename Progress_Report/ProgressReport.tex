@@ -1,0 +1,162 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+\bibliographystyle{IEEEtran}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		COALFO}
+\def \CapstoneTeamNumber{		28}
+\def \GroupMemberOne{			Kenny Thompson}
+\def \GroupMemberTwo{			Bryce Egley}
+\def \CapstoneProjectName{		Turning spectro-imagery into usable data}
+\def \CapstoneSponsorCompany{	NASA JPL}
+\def \CapstoneSponsorPerson{		Lewis John Mcgibbney}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{	%Problem Statement
+				%Requirements Document
+				%Technology Review
+				%Design Document
+				Progress Report
+				}
+
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+    	%\includegraphics[height=4cm]{coe_v_spot1}
+        \hfill
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        % 6. Fill in your abstract
+        	Coal and Open-pit surface mining impacts on American Lands Follow-On (COAL-FO) is the successor 				project to the 2016-2017 COAL project. COAL initially aimed to deliver a suite of algorithms to identify, classify, characterize, and quantify (by reporting a number of key metrics) the direct and indirect impacts of mining operations and related destructive surface mining activities across the continental U.S (and further afield). COAL successfully delivered a Python library for processing hyperspectral imagery from remote sensing devices such as the Airborne Visible/InfraRed Imaging Spectrometer (AVIRIS) and a Science Data System for running COAL pipelines. COAL-FO will utilize recent funding obtained from a recently awarded NSF-funded XSEDE high performance computing (HPC) grant to further improve, validate and document COAL algorithms, execution runtime performance and geospatial output results.[1]
+        \end{abstract}
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Project Purpose and Goals}
+
+COAL and Open-pit surface mining impacts on American Lands Follow-On (COAL-FO) is the successor project to
+the 2016- 2017 COAL project. COAL initially aimed to deliver a suite of algorithms to identify, classify, characterize,
+and quantify (by reporting a number of key metrics) the direct and indirect impacts of mining operations and related
+destructive surface mining activities across the continental U.S (and further afield). COAL successfully delivered a
+Python library for processing hyperspectral imagery from remote sensing devices such as the Airborne Visible/InfraRed
+Imaging Spectrometer AVIRIS and a Science Data System for running COAL pipelines. COAL-FO will utilize recent
+funding obtained from a recently awarded NSF-funded XSEDE high performance computing (HPC) grant to further
+improve, validate and document COAL algorithms, execution runtime performance and geospatial output results.[1]
+
+\section{Where we are on the project}
+
+We have mostly been focusing on completing the administrative tasks involved, ie the design document, the tech review, as well as limited testing and broad discussions on the desired scale and shape of our project. As we transition out of fall term and into winter term, we are now focusing on more extensive testing and actual implementaition of the discussed ideas. We will also be focusing on making the code more efficient and making our end product more useful to the public.
+
+\section{Problems impeding progress}
+
+We currently havent identified any major problems impending our progress. We have identified some issues with running the code that we were handed when we started this project.
+
+\subsection{Solutions?}
+
+The solutions will be to correct any errors in the code itself that is stopping us from completing tests on it.
+
+\section{Retrospective of the past 10 weeks}
+
+\begin{center}
+\begin{tabular}{ p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth} }
+ Positives & Deltas & Actions \\
+ Completed Design Document  & Need to convert code to usable form & Will convert code \\
+ Completed Tech Review & Need to set up export/import of data & Will set up \\
+ Completed Requirements Doc & Need to figure out database structure & Will review with client then set up \\
+ Completed Problem Statement & Need to make code more efficient & Will begin testing and analyzing code
+\end{tabular}
+\end{center}
+
+\section{Week by week summary}
+
+\subsection{Week 1}
+
+For the first week, we started out classes, reviewed the projects that we wanted, developed our preferences list, and set up our onenotes to include our biographies pages.
+
+\subsection{Week 2}
+
+For the second week, we got our project, reached out to our client, and coordinated a meeting time. We also got to know our team and developed systems of communication we would use throughout our project.
+
+\subsection{Week 3}
+
+This week we would work on our problem statement and complete a rough draft individually. We would also conduct our first meeting with our client and established procedures that we would follow for client communication for the remainder of the time we worked on our project.
+
+\subsection{Week 4}
+
+This week we worked on our problem statement and discussed it with our client. He had some minor corrections to make on it, but after that we turned it in and got the client to verify. We met with our client and again discussed the future of this project, and got his input on some upcoming documents we were working on.
+
+\subsection{Week 5}
+
+This week we turned in our Requirements document rough draft. We discussed it at length with our client and again implemented some minor corrections.
+
+\subsection{Week 6}
+
+This week we emailed our client for his final input and approval of our requirements document. After he gave his approval we turned it in.
+
+\subsection{Week 7}
+
+This week we went to class and worked on the code on our own. We also worked on thje technology review. We had a meeting with our client where we discussed a few pressing issues and scheduled around thanksgiving week.
+
+\subsection{Week 8}
+
+This week we turned in our technology review rough draft and conducted peer reviews in class on the documents. We would then go on to work on our final draft, and prepared the information we would need for our design document.
+
+\subsection{Week 9}
+
+This week we turned in the final draft of our technology review. Due to the holiday, we did not conduct our usual biweekly meeting with our client, but did exchange a few emails.
+
+\subsection{Week 10}
+
+This week we turned in our design document, exhcanged a few coordinating emails with our client on his vision of the design document, and prepared our progress report.
+
+\section{References}
+
+[1]"CS461 - CS Senior Capstone", Eecs.oregonstate.edu, 2017. [Online]. Available: http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320. [Accessed: 22- Nov- 2017].
+
+\end{document}
