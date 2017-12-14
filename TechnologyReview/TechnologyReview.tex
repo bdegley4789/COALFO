@@ -38,7 +38,7 @@ results.\cite{1}
 
 \subsection{What we are trying to accomplish}
 
-\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320}{COAL-FO} project as discussed in our last meeting with our client is to to create a searchable port for the existing \href{https://capstone-coal.github.io/}{COAL} project. This will be augmented to accommodate the desire to (i) port the coal-sds software to the \href{https://www.xsede.org/}{XSEDE} platform and undertake test and evaluation of the system performance, (ii) process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} imagery generating and archiving all science data products, and (iii) making the products searchable through a portal. \newline
+\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320}{COAL-FO} project as discussed in our last meeting with our client is to create a searchable portal for the existing \href{https://capstone-coal.github.io/}{COAL} project. The project will be focused on (i) utilizing existing open source software e.g. pycoal and coal-sds, created by the previous capstone group, (ii) publicly available airborne hyperspectral imagery data collected from the NASA \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} projects, and (iii) the \href{https://www.xsede.org/}{XSEDE} HPC environment.\newline
 
 \noindent The project will be focused around publicly available \href{https://capstone-coal.github.io/}{COAL} algorithms created by the previous capstone group, publicly available spectral analysis collected from the NASA \href{https://aviris.jpl.nasa.gov/}{AVIRIS} project, and a grant on the \href{https://www.xsede.org/}{XSEDE} environment to use \href{https://en.wikipedia.org/wiki/Supercomputer}{HPC}. Work for this project will be stored in the Capstone-Coal organization on github and version control as well as future releases for this project will managed within that organization.
 
@@ -49,6 +49,7 @@ results.\cite{1}
 \noindent The product will be taken from the \href{https://capstone-coal.github.io/}{coal-capstone} GitHub organization and the existing code will be exported to the \href{https://www.xsede.org/}{XSEDE} environment, and used to perform analysis on existing spectro imagery. We will improve the imagery processing algorithms currently in use. Then we will create a new baseline suite to rank changes to areas of land over time to determine if the changes in one area our significant or not. The main priority will be to create a searchable port for the project which will use the \href{https://www.xsede.org/}{XSEDE} environment.
 
 \section{Technologies}
+In this paper we will discuss 6 different technologies we will be using for our COAL-FO project. We explore three different options for each of these technologies, even if we already have decided on which option we are going to use.
 
 \subsection{HPCC High Performance Computing Cluster}
 
@@ -76,37 +77,28 @@ results.\cite{1}
 
 \subsubsection{Selection}
 
-\noindent XSESDE
+\noindent XSESDE - Out of the three options for HPCC discussed so far only XSESE has already been paid for and we were allocated 2 terabytes of storage.
 
-\subsection{Database Language}
-
+\subsection{Common Cataloging and archiving system}
 \subsubsection{Options}
-
-\noindent I NoSQL \newline
-
-\noindent II SuprTool \newline
-
-\noindent III MySQL
+\noindent I Apache OODT-powered Science Data System
+\noindent II FireHold
+\noindent III Widen Collective
 
 \subsubsection{Goals}
-
-\noindent We wish to use a database language so that we can loop images through XSEDE and store other data for this project in a database and have it managed all in one place. This will make it easier to design and organize our project.
+\noindent We wish to have a way to store AVIRIS imagery so that we can loop images through XSEDE and store other data for our COAL-FO project on. We also wish to have all the data for COAL-FO be managed in one place. This will make it easier to design and organize our project. Apache OODT-powered Science Data System can fill these concerns as well as COAL-SDS.
 
 \subsubsection{Criteria}
-
-\noindent This will be the language we use to manage our database which will hold the AVIRIS-NG imagery before we loop it through XSEDE. We want a database language that we are all familiar with and will work for the data we are working with. MySQL was the database language introduced to us in Introduction to Databases(cs340) it is relatively easy to implement this database language with existing code given to us by the COAL project from 2016-2017. NoSQL is used in non-relational databases and it uses key values to keep track of data. SuprTool is a database language used in Oracle databases for images.
+We need a common cataloging and archiving system that is compatible with the previous code written for COAL and that will work with XSEDE and AVIRIS imagery. Our main concern is that there could be problems archiving AVIRIS imagery and corrupting are losing data.
 
 \subsubsection{Comparison}
-
-\noindent NoSQL is a good database language however our project will involve a relational database so it won’t work for this case. SuprTool is also good for images which we are using, however we aren’t using an Oracle database so it won’t work either. MySQL was a programming language developed in in the early 90’s. It is a widely-used programming language for databases and is used in sites such as Google, Facebook, YouTube, Twitter. The language was developed in C and C++ and can run on many different operating systems such as Windows, Free BSD, mac OS, Linux etc.
+\noindent We want to make sure that Apache OODT-powered Science Data System will be compatible with AVIRIS imagery and work well together with XSEDE. FireHold is a good archiving system however it wouldn't necessarily work with the AVIRIS data. \cite{22} Widen Collective is also a good archiving system however it wouldn't necessarily work with AVIRIS data. \cite{23}
 
 \subsubsection{Discussion}
-
-\noindent MySQL is also supported by Oregon State and all engineering students and we are given our own database for storing data on. The only caveat to this is that all data stored on the Oregon State engineering student databases is that they are deleted at the end of each term, so we will need to make sure we can save this data somewhere to be later accessed and the reloaded to the engineering student database. Or to another database somewhere else to access at another time. The goal with XSEDE is to have all the images saved on one database then researchers or engineers can loop through and look at our work and decide what they want to use or view without having to go through the tedious process of downloading each image individually and running our code each time they want an image. If we can simply run the program ourselves and then get all the images generated onto a database which can then be downloaded later by researchers and engineers.
+\noindent We want a common cataloging and archiving system that we are all familiar with and will work for the data we are working with.
 
 \subsubsection{Selection}
-
-\noindent MySQL
+Apache OODT-powered Science Data System - Coal-SDS is existing code for our capstone project which uses Apache OODT-powered Science Data System so we will use this as our common cataloging and archiving system. \cite{21}
 
 \subsection{License}
 
@@ -138,7 +130,7 @@ results.\cite{1}
 
 \subsubsection{Selection}
 
-\noindent  Apache License v2.0 and GNU GPLv2
+\noindent  Apache License v2.0 and GNU GPLv2 - GNU 2.0 General Purpose 2.0 License is very easy to share and use. It also the second most common open source license as of 2015\cite{19}. Apache License v2.0 shares the same benefits as the two other open source licenses discussed previously. It is the third most common open source licenses as of 2015\cite{19}.
 
 \subsection{Imagery}
 
@@ -187,7 +179,8 @@ we will be able to use it to meet both criteria. We will also be making use of s
 database so we can determine what we are looking at.
 
 \subsubsection{Selection}
-\noindent AVIRIS
+\noindent AVIRIS - We will be using AVIRIS. Since the data is in the format we already want, and its free and publicly accessible,
+we will be able to use it to meet both criteria.
 
 \subsection{Export/Import Tool}
 
@@ -220,11 +213,10 @@ procedures, however this is more designed for high performance jobs, and is more
 two.
 
 \subsubsection{Discussion}
-\noindent For the amount of data we are dealing with, and the amount of wiggle room we have with the data they've
-given us, this is not required and is not an issue.
+\noindent XSEDE will provide the globus service for file transfer and sharing. Globus will allow us to securely share our date with other people using COAL. Globus is easier to use, has a web interface, can be set up to use just a simple login, and there is even a desktop download to run it from your computer.
 
 \subsubsection{Selection}
-None
+Regular Globus - XSEDE will provide the globus service for file transfer and sharing. Globus will allow us to securely share our date with other people using COAL. \cite{20}
 
 \subsection{Programming Language}
 
@@ -249,14 +241,13 @@ with GLOBUS, its also a program more people are familiar with. However its limit
 another programming language or some 3rd party tool to convert spectro-imagery into a format its able to read.\cite{5}
 Java would also be a good possibility, because it works well with databases, and might make it easier to
 export/import data from other sources. However the tooling would require significant work to take the functions
-we have on Python and make them work on Java, and even then it might not work as well as the existing
-applications.
+we have on Python and make them work on Java, and even then it might not work as well as the existing applications.
 
 \subsubsection{Discussion}
-\noindent We will be using python for the reasons stated above.
+\noindent We will be using python for the reasons stated above. We will try to convert the pycoal code to cython so we can get C like run time making our code faster since speed is a major issue in the project. As for coal-sds code java will remain as the programming language for that portion of our project. Java works well with databases, and might make it easier to export/import data from other sources.
 
 \subsubsection{Selection}
-\noindent Python
+\noindent Python, Cython and Java - Python is already used in the pycoal code which was left behind by the COAL project. We do hope to convert the python code to cython so that we can have C like run time. Java was used for the coal-sds code so Java will remain in the coal-sds portion of our project.
 
 \section{Conclusion}
 
@@ -302,5 +293,13 @@ applications.
 \bibitem{18} "GNU General Public License, version 2", www.gnu.org, 2017. [Online]. Available \url{https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html} [Accessed: 29- Nov- 2017].
 
 \bibitem{19} "Top Open Source Licenses",www.blackducksoftware.com, 2017.[Online]. Available \url{https://www.blackducksoftware.com/top-open-source-licenses} [Accessed: 29- Nov- 2017].
+
+\bibitem{20} "Globus at XSEDE", portal.xsede.org, 2017. [Online]. Available \url{https://portal.xsede.org/software/globus} [Accessed: 13- Dec- 2017].
+
+\bibitem{21} "Apache OODT", cwiki.apache.org, 2017. [Online]. Available \url{https://cwiki.apache.org/confluence/display/OODT/Home } [Accessed: 13- Dec- 2017].
+
+\bibitem{22} "FireHold", unbouncepages.com, 2017. [Online]. Available \url{http://unbouncepages.com/filehold-document-management-software/} [Accessed: 13- Dec- 2017].
+
+\bibitem{23} "Widen Collective, www.capterra.com, 2017. [Online]. Available \url{https://www.capterra.com/p/127696/Widen-Collective/} [Accessed: 13- Dec- 2017].
 \end{thebibliography}
 \end{document}
