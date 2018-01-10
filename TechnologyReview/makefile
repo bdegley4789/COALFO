@@ -13,4 +13,3 @@ all:
 	rm TechnologyReview.log
 	rm TechnologyReview.ps
 	rm TechnologyReview.out
-	rm TechnologyReview.toc
