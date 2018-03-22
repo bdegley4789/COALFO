@@ -13,4 +13,3 @@ all:
 	rm AlphaRelease.log
 	rm AlphaRelease.ps
 	rm AlphaRelease.out
-	rm AlphaRelease.toc
