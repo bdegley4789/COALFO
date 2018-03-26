@@ -41,7 +41,7 @@
 
 \noindent The purpose for this document is to layout the requirements for the \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} capstone project and describe how these requirements will be accomplished. \newline
 
-\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project as discussed in our last meeting with our client is to to create a searchable port for the existing \href{https://capstone-coal.github.io/}{COAL} project. This will be augmented to accommodate the desire to (i) port the coal-sds software to the \href{https://www.xsede.org/}{XSEDE} platform and undertake test and evaluation of the system performance, (ii) process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} imagery generating and archiving all science data products, and (iii) making the products searchable through a portal. \newline
+\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project as discussed in our last meeting with our client is to to create a searchable port for the existing \href{https://capstone-coal.github.io/}{COAL} project. This will be augmented to accommodate the desire to (i) process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} imagery generating and archiving all science data products, and (ii) having as a stretch goal, that data available for others to use. \newline
 
 \noindent \textbf{1.2 Scope}\newline
 
@@ -57,12 +57,7 @@
 
 \noindent \href{https://en.wikipedia.org/wiki/Supercomputer}{HPC}: High-performance computing\newline
 
-
-\noindent \href{https://www.xsede.org/}{XSEDE}: Extreme Science and Engineering Discovery Environment\newline
-
-
 \noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS}: Airborne Visible / Infrared Imaging Spectrometer\newline
-
 
 \noindent \textbf{1.4 References}\newline
 
@@ -72,7 +67,7 @@ IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Spec
 \noindent \textbf{1.5 Overview}\newline
 
 
-\noindent This project will, to put it in rough terms, take existing algorithms, export them to the \href{https://www.xsede.org/}{XSEDE} environment, a high powered computing cluster and process as much publicly available spectro imagery as possible, and use that to create an archive. A ‘stretch goal’ will be to take that archive and make it publicly viewable and searchable. The \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} (COAL Follow On) is a continuation of a previous project completed in the 2016-2017 capstone class. The \href{https://capstone-coal.github.io/}{COAL} project was a suite of algorithms that identified, classified, and quantified the effects of open-pit mining on the surrounding environment. Our project will also aim at improving the existing algorithms that were developed in the \href{https://capstone-coal.github.io/}{COAL} project and create a new baseline suite to rank changes to areas of land over time. \newline
+\noindent This project will, to put it in rough terms, take existing algorithms, improve them, and test the ability to work on other systems. The \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} (COAL Follow On) is a continuation of a previous project completed in the 2016-2017 capstone class. The \href{https://capstone-coal.github.io/}{COAL} project was a suite of algorithms that identified, classified, and quantified the effects of open-pit mining on the surrounding environment. Our project will also aim at improving the existing algorithms that were developed in the \href{https://capstone-coal.github.io/}{COAL} project and create a new baseline suite to rank changes to areas of land over time. \newline
 
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{2. Overall Description}}\newline
@@ -81,53 +76,55 @@ IEEE. IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Spec
 \noindent \textbf{2.1 Product Perspective}\newline
 
 
-\noindent The product will be taken from the coal-capstone github organization and the existing code will be exported to the \href{https://www.xsede.org/}{XSEDE} environment, and used to perform analysis on existing spectro imagery. We will improve the imagery processing algorithms currently in use. Then we will create a new baseline suite to rank changes to areas of land over time to determine if the changes in one particular area our significant or not. The main priority will be to create a searchable port for the project which will use the \href{https://www.xsede.org/}{XSEDE} environment. \newline
+\noindent The product will be taken from the coal-capstone github organization and the existing code can potentially be exported to other environments, and used to perform analysis on existing spectro imagery. We will improve the imagery processing algorithms currently in use. Then we will create a new baseline suite to rank changes to areas of land over time to determine if the changes in one particular area our significant or not.\newline
 
 
 \noindent \textbf{2.2 Product Functions}\newline
 
 
-\noindent The product will be non functional upon completion, unless further data is generated that requires analysis. The goal will be to create an archive. A stretch goal would be to create a way to search that archive, in which case the functions for that would be a search function and a visual way to represent data. \newline
+\noindent The product will be non functional upon completion, unless further data is generated that requires analysis. It will be a improved PYCOAL algorithm. \newline
+\noindent \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} will also focus on creating conversion functions to allow our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.  \newline
 
 
 \noindent \textbf{2.3 User Characteristics}\newline
 
 
-\noindent The user will be able to access this archived dataset and access processed data to see damage from coal mining in various part of the country. If the stretch goal is reached, then the user will be able to save time by searching a database to get the same information without having to download it first.\newline
+\noindent The user will be able to access this new and improved code from the github, and will be able to run it on their own resources that they have available.\newline
+\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. \newline
 
 
 \noindent \textbf{2.4 Constraints}\newline
 
-
-\noindent The \href{https://www.xsede.org/}{XSEDE} grant only allowed to 2 terabytes of storage and a certain number of clock hours. To counteract this constraint, we will need to develop a system for rotating in imagery that needs to be processed and out data that's already been processed. We will also need to make sure our algorithms are as efficient as they can possibly be to not waste resources so we can use maximize the use of the 2 terabytes provided to us.\newline
-
-
-\noindent In addition, we are limited by the \href{https://aviris.jpl.nasa.gov/}{AVIRIS} data that is available that, while large, barely covers a fraction of the surface of the United States. This data is focused primarily on flight lines and areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. \newline
+\noindent We are limited by the \href{https://aviris.jpl.nasa.gov/}{AVIRIS} data that is available that, while large, barely covers a fraction of the surface of the United States. This data is focused primarily on flight lines and areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. \newline
 
 
 \noindent \textbf{2.5 Assumptions and Dependencies}\newline
 
 
-\noindent This project requires the existing \href{https://capstone-coal.github.io/}{COAL} algorithms, the \href{https://www.xsede.org/}{XSEDE} environment for rotating in imagery, the data provided to use by \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and Apache.\newline
+\noindent This project requires the existing \href{https://capstone-coal.github.io/}{COAL} algorithms, and the data provided to use by \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and Apache.\newline
 
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{3. Specific Requirements}}\newline
 
 
-\noindent A completed archive, and tools that are exportable to \href{https://www.xsede.org/}{XSEDE}. The requirements of our project as discussed with our client is to to create a searchable port for the existing \href{https://capstone-coal.github.io/}{COAL} project. Specifically, this will be augmented to accommodate the desire to (i) port the coal-sds software to the \href{https://www.xsede.org/}{XSEDE} platform and undertake test and evaluation of the system performance, (ii) process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} imagery generating and archiving all science data products, and (iii) making the products searchable through a portal.\newline
+\noindent  The requirements of our project as discussed with our client is to to create several improvments to the existing \href{https://capstone-coal.github.io/}{COAL} project. Specifically, this will be augmented to accommodate the desire to (i) verify and correct if necessary the COAL-SDS software and its ability to be exported to other platforms, (ii) verify our ability to process all \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and \href{https://aviris-ng.jpl.nasa.gov/}{AVIRIS-NG} imagery, and (iii) making the final product better in several key ways.\newline
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{4. References}}\newline
 
 \noindent [1] COAL-FO, Coal and Open-pit surface mining impacts on American Lands Follow-On\newline \url{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320} \newline
 
-\noindent [2] XSEDE, Extreme Science and Engineering Discovery Environment\newline \url{https://www.xsede.org/} \newline
+\noindent [2] AVIRIS, Airborne Visible/Infrared Imaging Spectrometer\newline \url{https://aviris.jpl.nasa.gov/} \newline
 
-\noindent [3] AVIRIS, Airborne Visible/Infrared Imaging Spectrometer\newline \url{https://aviris.jpl.nasa.gov/} \newline
+\noindent [3] AVIRIS-NG, irborne Visible/Infrared Imaging Spectrometer Next Generation\newline \url{https://aviris-ng.jpl.nasa.gov/}\newline
 
-\noindent [4] AVIRIS-NG, irborne Visible/Infrared Imaging Spectrometer Next Generation\newline \url{https://aviris-ng.jpl.nasa.gov/}\newline
+\noindent [4] COAL, Coal and Open-pit surface mining impacts on American Lands\newline \url{https://capstone-coal.github.io/} \newline
 
-\noindent [5] COAL, Coal and Open-pit surface mining impacts on American Lands\newline \url{https://capstone-coal.github.io/} \newline
+\noindent [5] HPC, High Performance Computing\newline \url{https://en.wikipedia.org/wiki/Supercomputer}\newline
 
-\noindent [6] HPC, High Performance Computing\newline \url{https://en.wikipedia.org/wiki/Supercomputer}
+\noindent [6] USGS Spectral Library Version 7\newline \url{https://en.wikipedia.org/wiki/Supercomputer}\newline
+
+\noindent [7] EcoSIS Spectral Library \newline \url{https://ecosis.org/}\newline
+
+\noindent [8] EcoSTRESS Spectral Library \newline \url{https://speclib.jpl.nasa.gov/}\newline
 
 \end{document}
