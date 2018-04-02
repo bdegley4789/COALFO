@@ -41,7 +41,7 @@
 
 \noindent The purpose for this document is to layout the requirements for the \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} (COAL Follow On) capstone project and describe how these requirements will be accomplished. \newline
 
-\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project is to improve pycoal algorithms, increase code coverage, enable more spectral libraries to work with pycoal, to collect more data to process with pycoal and to improve general functionality of pycoal. \newline
+\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project is to improve pycoal algorithms, increase code coverage, enable more spectral libraries to work with pycoal, create a \href{https://restfulapi.net/}{REST API} to run task execution remotely, to collect more data to process with pycoal and to improve general functionality of pycoal. \newline
 
 \noindent \textbf{1.2 Scope}\newline
 
@@ -55,6 +55,8 @@
 \noindent \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO}: Coal and Open-pit surface mining impacts on American Lands Follow-On\newline
 
 \noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS}: Airborne Visible / Infrared Imaging Spectrometer\newline
+
+\noindent \href{https://restfulapi.net/}{REST API} REpresentational State Transfer(REST), Application Program Interface(API) \newline 
 
 
 \noindent \textbf{1.4 Overview}\newline
@@ -75,14 +77,14 @@
 \noindent \textbf{2.2 Product Functions}\newline
 
 
-\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, increase code coverage, bug fixes and  \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. As well as a REST API to run task execution remotely. \newline
+\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, increased code coverage, bug fixes and  \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. As well as a \href{https://restfulapi.net/}{REST API} to run task execution remotely. \newline
 
 
 \noindent \textbf{2.3 User Characteristics}\newline
 
 
 \noindent The user will be able to access this new and improved code from github, and will be able to run it on their own resources that they have available.\newline
-\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate envi .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. We will create a REST API using the Falcon Web Framework and deploy using Google Cloud Platform or a similar service. We will test the functionality of this REST API functionality using JSON and Postman. \newline
+\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate envi .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. We will create a \href{https://restfulapi.net/}{REST API} using the \href{https://falcon.readthedocs.io/en/stable/}{Falcon Web Framework} and deploy using \href{https://cloud.google.com/}{Google Cloud Platform} or a similar service. We will test the functionality of this \href{https://restfulapi.net/}{REST API} using \href{https://www.json.org/}{JSON} and \href{https://www.getpostman.com/}{Postman} or similar tools. \newline
 
 
 \noindent \textbf{2.4 Constraints}\newline
@@ -99,7 +101,7 @@
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{3. Specific Requirements}}\newline
 
 
-\noindent  The requirements of our project will be to improve pycoal algorithms, increase code coverage, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. Create a REST API to run task execution remotely.\newline
+\noindent  The requirements of our project will be to improve pycoal algorithms, increase code coverage, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. Create a \href{https://restfulapi.net/}{REST API} to run task execution remotely.\newline
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{4. References}}\newline
 
@@ -118,5 +120,7 @@
 \noindent [7] EcoSTRESS Spectral Library \newline \url{https://speclib.jpl.nasa.gov/}\newline
 
 \noindent [8] REST API \newline \url{https://restfulapi.net/}\newline 
+
+\noindent [9] Falcon Web Framework \newline \url{https://falcon.readthedocs.io/en/stable/}\newline 
 
 \end{document}
