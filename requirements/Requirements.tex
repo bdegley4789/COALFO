@@ -41,7 +41,7 @@
 
 \noindent The purpose for this document is to layout the requirements for the \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} (COAL Follow On) capstone project and describe how these requirements will be accomplished. \newline
 
-\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project is to improve pycoal algorithms, enable more spectral libraries to work with pycoal, to collect more data to process with pycoal and to improve general functionality of pycoal. \newline
+\noindent The purpose of our \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} project is to improve pycoal algorithms, increase code coverage, enable more spectral libraries to work with pycoal, to collect more data to process with pycoal and to improve general functionality of pycoal. \newline
 
 \noindent \textbf{1.2 Scope}\newline
 
@@ -60,7 +60,7 @@
 \noindent \textbf{1.4 Overview}\newline
 
 
-\noindent This project will, to put it in rough terms, take existing algorithms, improve them, and test the ability to work on other systems. The \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} is a continuation of a previous project completed in the 2016-2017 capstone class. The \href{https://capstone-coal.github.io/}{COAL} project was a stable python toolkit providing examples, tests, packages, stable release and stable API that identified, classified, and quantified the effects of open-pit mining on the surrounding environment. Which also included \href{https://github.com/capstone-coal/coal-sds}{COAL-SDS} (Coal Science Data System). Our project will aim at improving the existing algorithms and general functionality as well as enabling the toolkit to work with more spectral libraries. \newline
+\noindent This project will, to put it in rough terms, take existing algorithms, improve them, and test the ability to work on other systems. The \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} is a continuation of a previous project completed in the 2016-2017 capstone class. The \href{https://capstone-coal.github.io/}{COAL} project was a stable python toolkit providing examples, tests, packages, stable release and stable API that identified, classified, and quantified the effects of open-pit mining on the surrounding environment. Which also included \href{https://github.com/capstone-coal/coal-sds}{COAL-SDS} (Coal Science Data System). Our project will aim at improving the existing algorithms and general functionality as well as enabling the toolkit to work with more spectral libraries. Increasing the code coverage and creating a  \href{https://restfulapi.net/}{REST API} to run task execution remotely. \newline
 
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{2. Overall Description}}\newline
@@ -69,20 +69,20 @@
 \noindent \textbf{2.1 Product Perspective}\newline
 
 
-\noindent The product will be taken from the coal-capstone github organization and the existing code can potentially be exported to other environments, and used to perform analysis on existing spectral imagery. We will improve the imagery processing algorithms currently in use. We will allow the product to identify more spectra in other spectral libraries such as \href{https://ecosis.org/}{EcoSIS}, \href{https://speclib.jpl.nasa.gov/}{EcoStress} and \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}.\newline
+\noindent The product will be taken from the coal-capstone github organization and the existing code can potentially be exported to other environments, and used to perform analysis on existing spectral imagery. We will improve the imagery processing algorithms currently in use. We will allow the product to identify more spectra in other spectral libraries such as \href{https://ecosis.org/}{EcoSIS}, \href{https://speclib.jpl.nasa.gov/}{EcoStress} and \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}. We will build a \href{https://restfulapi.net/}{REST API} to run task execution remotely for pycoal. \newline
 
 
 \noindent \textbf{2.2 Product Functions}\newline
 
 
-\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, bug fixes and  \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.  \newline
+\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, increase code coverage, bug fixes and  \href{http://eecs.oregonstate.edu/capstone/submission/?page=preview\&pid=320}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. As well as a REST API to run task execution remotely. \newline
 
 
 \noindent \textbf{2.3 User Characteristics}\newline
 
 
 \noindent The user will be able to access this new and improved code from github, and will be able to run it on their own resources that they have available.\newline
-\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate envi .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. \newline
+\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate envi .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. We will create a REST API using the Falcon Web Framework and deploy using Google Cloud Platform or a similar service. We will test the functionality of this REST API functionality using JSON and Postman. \newline
 
 
 \noindent \textbf{2.4 Constraints}\newline
@@ -99,7 +99,7 @@
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{3. Specific Requirements}}\newline
 
 
-\noindent  The requirements of our project will be to improve pycoal algorithms, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.\newline
+\noindent  The requirements of our project will be to improve pycoal algorithms, increase code coverage, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. Create a REST API to run task execution remotely.\newline
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{4. References}}\newline
 
@@ -107,16 +107,16 @@
 
 \noindent [2] AVIRIS, Airborne Visible/Infrared Imaging Spectrometer\newline \url{https://aviris.jpl.nasa.gov/} \newline
 
-\noindent [3] AVIRIS-NG, irborne Visible/Infrared Imaging Spectrometer Next Generation\newline \url{https://aviris-ng.jpl.nasa.gov/}\newline
+\noindent [3] AVIRIS-NG, airborne Visible/Infrared Imaging Spectrometer Next Generation\newline \url{https://aviris-ng.jpl.nasa.gov/}\newline
 
 \noindent [4] COAL, Coal and Open-pit surface mining impacts on American Lands\newline \url{https://capstone-coal.github.io/} \newline
 
-\noindent [5] HPC, High Performance Computing\newline \url{https://en.wikipedia.org/wiki/Supercomputer}\newline
+\noindent [5] USGS Spectral Library Version 7\newline \url{https://en.wikipedia.org/wiki/Supercomputer}\newline
 
-\noindent [6] USGS Spectral Library Version 7\newline \url{https://en.wikipedia.org/wiki/Supercomputer}\newline
+\noindent [6] EcoSIS Spectral Library \newline \url{https://ecosis.org/}\newline
 
-\noindent [7] EcoSIS Spectral Library \newline \url{https://ecosis.org/}\newline
+\noindent [7] EcoSTRESS Spectral Library \newline \url{https://speclib.jpl.nasa.gov/}\newline
 
-\noindent [8] EcoSTRESS Spectral Library \newline \url{https://speclib.jpl.nasa.gov/}\newline
+\noindent [8] REST API \newline \url{https://restfulapi.net/}\newline 
 
 \end{document}
