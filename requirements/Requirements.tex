@@ -41,7 +41,7 @@
 
 \noindent The purpose for this document is to layout the requirements for the \href{https://capstone-coal.github.io/team}{COAL-FO} (COAL Follow On) capstone project and describe how these requirements will be accomplished. \newline
 
-\noindent The purpose of our \href{https://capstone-coal.github.io/team}{COAL-FO} project is to improve pycoal algorithms, enable more spectral libraries to work with pycoal, to collect more data to process with pycoal and to improve general functionality of pycoal. \newline
+\noindent The purpose of our \href{https://capstone-coal.github.io/team}{COAL-FO} project is to improve pycoal algorithms, enable more spectral libraries to work with pycoal, to collect more data to process with \href{https://github.com/capstone-coal/pycoal}{pycoal} and to improve general functionality of \href{https://github.com/capstone-coal/pycoal}{pycoal}. \newline
 
 \noindent \textbf{1.2 Scope}\newline
 
@@ -55,6 +55,15 @@
 \noindent \href{https://capstone-coal.github.io/team}{COAL-FO}: Coal and Open-pit surface mining impacts on American Lands Follow-On\newline
 
 \noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS}: Airborne Visible / Infrared Imaging Spectrometer\newline
+
+\noindent \href{https://www.usgs.gov/}{USGS}: United States Geological Survey \newline
+
+\noindent \href{https://ecosis.org/}{EcoSIS}: Ecological Spectral Information System \newline
+
+\noindent \href{https://ecostress.jpl.nasa.gov/}{EcoStress}: ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station \newline
+
+\noindent \href{https://asterweb.jpl.nasa.gov/index.asp}{ASTER}: Advanced Spaceborne Thermal Emission and Reflection Radiometer \newline
+
 
 
 \noindent \textbf{1.4 Overview}\newline
@@ -82,13 +91,13 @@
 
 
 \noindent The user will be able to access this new and improved code from github, and will be able to run it on their own resources that they have available.\newline
-\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate envi .hdr and .sli files from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. \newline
+\noindent The user will also be able to use the convert functions we will create in mineral.py of pycoal to generate convolved library files in envi .hdr and .sli format from \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. \newline
 
 
 \noindent \textbf{2.4 Constraints}\newline
 
 \noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS} data that is available is focused primarily on flight lines while we want to examine areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. \newline
-\noindent USGS Spectral Library Version 6 the current spectral library pycoal uses was created over a decade ago in 2007. Reading through the documentation they provided it is unclear how they generated the convolved library for this spectral library. And many of the emails they list to send questions to are people who are no longer working for USGS or do not know how the convolved libraries were created based on our attempts to contact USGS. \newline
+\noindent \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6} the current spectral library pycoal is using, was created over a decade ago in 2007. Reading through the documentation they provided it is unclear how they generated the convolved library for this spectral library. And many of the emails they list to send questions to regarding \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6} are people who are no longer work for \href{https://www.usgs.gov/}{USGS} or do not know how the convolved libraries were created based on our attempts to contact \href{https://www.usgs.gov/}{USGS}. \newline
 
 
 \noindent \textbf{2.5 Assumptions and Dependencies}\newline
@@ -107,15 +116,15 @@ Pycoal depends on these spectral libraries being in the correct convolved librar
 \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7} was release in 2017 and is the newest released version of the \href{https://www.usgs.gov/}{USGS}(United States Geological Survey) spectral library. \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6} the prior version was released over a decade ago in 2007. \href{https://github.com/capstone-coal/pycoal}{Pycoal} doesn’t use the entire spectral library instead it consumes a convolved library file of the Spectral Library. For \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6}, \href{https://www.usgs.gov/}{USGS} staged the convolved library files on their \href{ftp://ftpext.cr.usgs.gov/pub/cr/co/denver/speclab/pub/spectral.library/splib06.library/Convolved.libraries/}{website} and the \href{https://capstone-coal.github.io/}{COAL} project was able to use these to identify spectra. The problem \href{https://capstone-coal.github.io/team}{COAL-FO} faces is that much of the documentation used to do this is over a decade old, the spectral libraries are in completely different formats and it doesn’t appear as though \href{https://www.usgs.gov/}{USGS} has plans to stage the convolved library files for \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7}.\newline
 \newline
 The \href{https://capstone-coal.github.io/team}{COAL-FO} project will also aim at using spectra from the \href{https://ecosis.org/}{EcoSIS} and \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Libraries. Enabling pycoal to work with more spectral libraries will allow us to identify more minerals in the \href{https://aviris.jpl.nasa.gov/}{AVIRIS} images. The \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library Version 1.0 is the spectral library which is built upon the \href{https://speclib.jpl.nasa.gov/downloads/2009-Baldridge.pdf}{ASTER} Spectral Library Version 2.0. Building the convolved library files for this spectral library may not be so difficult since we already have a conversion for the \href{https://speclib.jpl.nasa.gov/downloads/2009-Baldridge.pdf}{ASTER} spectral library which \href{https://speclib.jpl.nasa.gov/}{EcoStress} is adapted from.
-\href{https://ecosis.org/}{EcoSIS} Spectral Library has 64k spectra which will be totally new to us. With both \href{https://speclib.jpl.nasa.gov/}{EcoStress} and \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7} we are currently using previous versions of these spectral libraries so many of these spectra will have already been identified in previous products we generated with pycoal. \newline
+\href{https://ecosis.org/}{EcoSIS} Spectral Library has 62k spectra which will be totally new to us. With both \href{https://speclib.jpl.nasa.gov/}{EcoStress} and \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7} we are currently using previous versions of these spectral libraries so many of these spectra will have already been identified in previous products we generated with \href{https://github.com/capstone-coal/pycoal}{pycoal}. \newline
 \newline
-The specific goal for each one of these Spectral Libraries is to create a convert class in mineral.py or else where in the pycoal subdirectory which will convert these spectral libraries to their convolved library file formats. These formats of the convolved libraries are specifically .sli and .hdr file formats.\newline
+The specific goal for each one of these Spectral Libraries is to create a convert class in mineral.py or else where in the \href{https://github.com/capstone-coal/pycoal}{pycoal} subdirectory which will convert these spectral libraries to their convolved library file formats. These formats of the convolved libraries are specifically .sli and .hdr file formats.\newline
 \newline
-A specific goal for completion will also be the implementation of 'classifier callback,' or the ability to control the classification algorithm used. Right now we utilize the spectral angle mapper for determining mineral classification, and we would like to be able to use other techniques in the future, since different options serve different purposes. Implementing the classifier callback will give the end user increased flexibility when using pycoal. This is important for follow on projects, and follow on work is already scheduled that is depending on the completion of this goal, so it is important for the final product.\newline 
+A specific goal for completion will also be the implementation of 'classifier callback,' or the ability to control the classification algorithm used. Right now we utilize the spectral angle mapper for determining mineral classification, and we would like to be able to use other techniques in the future, since different options serve different purposes. Implementing the classifier callback will give the end user increased flexibility when using \href{https://github.com/capstone-coal/pycoal}{pycoal}. This is important for follow on projects, and follow on work is already scheduled that is depending on the completion of this goal, so it is important for the final product. \newline
 \newline
-A stretch goal will be for the \href{https://capstone-coal.github.io/team}{COAL-FO} project to crop the default example image. Our client has said this task may take a long time to complete. Therefor, this requirement will be left as a stretch goal if and when the requirements for the spectral libraries mentioned above have been completed, tested and verified to be working correctly. \newline
+A stretch goal will be for the \href{https://capstone-coal.github.io/team}{COAL-FO} project to crop the default example image. Our client has said this task may take a long time to complete. Therefor, this requirement will be left as a stretch goal if and when the requirements for the spectral libraries and classifier callback mentioned above have been completed, tested and verified to be working correctly. \newline
 \newline
-Currently, it takes approximately one to two days to run a mineral classification on the default example. The default example is 17.8 gb. By cropping it down to only contain the main areas of interest in this case the flow lines. We could ideally get it down to a size that would only take a few hours to run. This would be very beneficial to new users of pycoal. And would help us a lot with testing. \href{https://aviris.jpl.nasa.gov/}{AVIRIS} images that are 1-2 gb in size currently do exist, and these images typically only take a few hours to run on pycoal, however most of these smaller sized images do not contain lots of activity in terms of minerals identified that we would be interested using as a main example or even for testing purposes. \newline
+Currently, it takes approximately one to two days to run a mineral classification on the default example. The default example is \href{ftp://avng.jpl.nasa.gov/AVNG_2015_data_distribution/L2/ang20150420t182050_rfl_v1e/}{17.5 gb}. By cropping it down to only contain the main areas of interest in this case the flow lines. We could ideally get it down to a size that would only take a few hours to run. This would be very beneficial to new users of \href{https://github.com/capstone-coal/pycoal}{pycoal} and would help us a lot with testing. We have found \href{https://aviris.jpl.nasa.gov/}{AVIRIS} images that are only 1-2 gb in size, these images typically only take a few hours to run on \href{https://github.com/capstone-coal/pycoal}{pycoal}, however most of these smaller sized images do not contain lots of mineral and mining activity. \newline
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{4. References}}\newline
 
