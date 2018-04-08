@@ -75,7 +75,7 @@
 \noindent \textbf{2.2 Product Functions}\newline
 
 
-\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, bug fixes and  \href{https://capstone-coal.github.io/team}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.  \newline
+\noindent The product will be functional upon completion, and used on new data that requires analysis. It will be improved pycoal algorithms, general improvements, bug fixes and  \href{https://capstone-coal.github.io/team}{COAL-FO} will also focus on enabling our classifications to use the \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.  With these additional spectral libraries we will be able to identify more minerals in the AVIRIS images we run mineral classifications on.\newline
 
 
 \noindent \textbf{2.3 User Characteristics}\newline
@@ -88,18 +88,21 @@
 \noindent \textbf{2.4 Constraints}\newline
 
 \noindent \href{https://aviris.jpl.nasa.gov/}{AVIRIS} data that is available is focused primarily on flight lines while we want to examine areas where coal and open pit surface mining is currently being done or areas which have undergone coal and open pit surface mining in the past. \newline
+\noindent USGS Spectral Library Version 6 the current spectral library pycoal uses was created over a decade ago in 2007. Reading through the documentation they provided it is unclear how they generated the convolved library for this spectral library. And many of the emails they list to send questions to are people who are no longer working for USGS or do not know how the convolved libraries were created based on our attempts to contact USGS. \newline
 
 
 \noindent \textbf{2.5 Assumptions and Dependencies}\newline
 
 
-\noindent This project is dependent on the existing \href{https://capstone-coal.github.io/}{COAL} algorithms, the data provided by \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and Spectral Libraries such \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.\newline
+\noindent This project is dependent on the existing \href{https://capstone-coal.github.io/}{COAL} algorithms, the data provided by \href{https://aviris.jpl.nasa.gov/}{AVIRIS} and Spectral Libraries such \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library, \href{https://speclib.jpl.nasa.gov/downloads/2009-Baldridge.pdf}{ASTER} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library.\newline
+\newline
+Pycoal depends on these spectral libraries being in the correct convolved library format with band wavelengths \href{https://pubs.usgs.gov/of/2001/ofr-01-0405/ofr-01-0405.html}{from 0.37 to 2.5 microns (micrometers)} to match that of the AVIRIS images we are analyzing. Pycoal also relies on these spectral libraries mentioned above to provide all the necessary data such as reflectance values, wavelength values, spectra name for generation of the convolved libraries in the .sli and .hdr file format. \newline
 
 
 \noindent {\fontsize{14pt}{14pt}\selectfont \textbf{3. Specific Requirements}}\newline
 
 
-\noindent  The requirements of our project will be to improve pycoal algorithms, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. More details on the specifics of each of these requirements is provided below. \newline
+\noindent  The specific requirements of our project will be to improve pycoal algorithms, fix and find bugs existing in pycoal, make general improvements and enable pycoal to work with more spectral libraries specifically \href{https://speclab.cr.usgs.gov/spectral-lib.html}{USGS Spectral Library Version 7}, \href{https://ecosis.org/}{EcoSIS} Spectral Library and the \href{https://speclib.jpl.nasa.gov/}{EcoStress} Spectral Library. More details on how we intended to implement each of these requirements is provided below. \newline
 
 \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7} was release in 2017 and is the newest released version of the \href{https://www.usgs.gov/}{USGS}(United States Geological Survey) spectral library. \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6} the prior version was released over a decade ago in 2007. \href{https://github.com/capstone-coal/pycoal}{Pycoal} doesn’t use the entire spectral library instead it consumes a convolved library file of the Spectral Library. For \href{https://speclab.cr.usgs.gov/spectral.lib06/ds231/index.html}{USGS Spectral Library Version 6}, \href{https://www.usgs.gov/}{USGS} staged the convolved library files on their \href{ftp://ftpext.cr.usgs.gov/pub/cr/co/denver/speclab/pub/spectral.library/splib06.library/Convolved.libraries/}{website} and the \href{https://capstone-coal.github.io/}{COAL} project was able to use these to identify spectra. The problem \href{https://capstone-coal.github.io/team}{COAL-FO} faces is that much of the documentation used to do this is over a decade old, the spectral libraries are in completely different formats and it doesn’t appear as though \href{https://www.usgs.gov/}{USGS} has plans to stage the convolved library files for \href{https://crustal.usgs.gov/speclab/QueryAll07a.php}{USGS Spectral Library Version 7}.\newline
 \newline
