@@ -1,6 +1,4 @@
 \documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
-\usepackage{graphicx}
-\graphicspath{ {images/} }
 \usepackage{url}
 \usepackage[colorlinks = true,
             linkcolor = blue,
@@ -101,7 +99,7 @@ We also plan on making instructions to show users how to modify the conversion c
 
 \section{Describe any problems that have impeded your progress, with any solutions you have}
 
-Upgrading to USGS Spectral Library Version 7 was a very long issue that ended up being a lot harder that we had originally anticipated. At first we thought the issue may take a week or two but it ended up taking about 8 weeks when it actually came down to getting the entire spectral library into the correct envi file format, creating unit tests for the conversion function and then running several mineral classifications on the new convolved spectral envi library files. 
+Upgrading to USGS Spectral Library Version 7 was a very long issue that ended up being a lot harder that we had originally anticipated. At first we thought the issue may take a week or two but it ended up taking about 8 weeks when it actually came down to getting the entire spectral library into the correct envi file format, creating unit tests for the conversion function and then running several mineral classifications on the new convolved spectral envi library files.
 
 \section{Includes particularly interesting pieces of code (if coding is involved)}
 
@@ -113,7 +111,7 @@ class FullSpectralLibrary7Convert:
             This class method converts the entire `USGS Spectral Library Version 7
             <https://speclab.cr.usgs.gov/spectral-lib.html>`_ library into
             its convolved envi format
-            
+
             Args:
             none
             """
@@ -125,15 +123,15 @@ class FullSpectralLibrary7Convert:
             This class method converts the entire `USGS Spectral Library Version 7
             <https://speclab.cr.usgs.gov/spectral-lib.html>`_ library into
             its convolved envi format
-            
+
             Spectral Library Version 7 can be downloaded `here <https://speclab.cr.usgs.gov/spectral-lib.html>`_
-            
+
             Args:
             library_filename (str): path to USGS Spectral Library Version 7 directory
             """
         if not library_filename:
             raise ValueError("Must provide path for USGS Spectral Library Version 7.")
-        
+
         #This will take all the necessary .txt files for spectra in USGS
         #Spectral Library Version 7 and put them in a new directory called
         #"usgs_splib07_modified" in the examples directory
@@ -168,7 +166,7 @@ class FullSpectralLibrary7Convert:
             #Remove first and last char in case extra spaces are added
             spectra_first_space = spectra_name[1:]
             spectra_last_space = spectra_first_space[:-1]
-            
+
             #Check if Spectra is unique
             set_spectra = set(spectra_list)
             if not any(spectra_name in s for s in set_spectra):
@@ -215,15 +213,17 @@ def test_spectral_conversion():
 
 \section{Includes images of your project -- screen shots, photos, whatever is appropriate}
 
-USGS Spectral Library version 6 classification image
+I had to remove photos since the engineering server did not accept images in Latex.
 \newline
-\includegraphics{S06_1}
-USGS Spectral Library version 7 classification image \newline
-\includegraphics{SO7_1}
-USGS Spectral Library version 6 classification of San Juan Coal Mine \newline
-\includegraphics{SO6_2}
-USGS Spectral Library version 7 classification of San Juan Coal Mine \newline
-\includegraphics{S07_2}
+I included the images in in the images folder
+\newline
+USGS Spectral Library version 6 classification image is images S06 1
+\newline
+USGS Spectral Library version 7 classification image is images SO7 1
+\newline
+USGS Spectral Library version 6 classification of San Juan Coal Mine is images SO6 2
+\newline
+USGS Spectral Library version 7 classification of San Juan Coal Mine is images S07 2
 
 \begin{thebibliography}{9}
 \bibitem{1} ”CS461 - CS Senior Capstone”, Eecs.oregonstate.edu, 2017. [Online]. Available: \url{http://eecs.oregonstate.edu/capstone/cs/capstone.cgi?project=320} [Accessed: 22- Nov- 2017]
@@ -268,4 +268,3 @@ USGS Spectral Library version 7 classification of San Juan Coal Mine \newline
 \end{thebibliography}
 
 \end{document}
-
